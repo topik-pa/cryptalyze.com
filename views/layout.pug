@@ -1,0 +1,79 @@
+-
+  let prod = process.env.NODE_ENV === 'production'
+  let proj_name = 'cryptalize.com'
+  let proj_tagline = 'Un progetto crypto'
+  let description = 'A description...'
+  let proj_url = 'https://www.zero-project.net'
+  let copy = 2025
+  let owner = 'Marco Pavan'
+  let email = 'marco@progweb.it'
+  let owner_email = 'marco@progweb.it'
+  let logo = 'https://progweb.it/assets/images/logo.png'
+  let fbAppId = 1234567890
+  let googleSiteVerification = '#'
+  let sc_project = 12345
+  let sc_security = 'xxxxx'  
+  let GATagId = 'UA-123456789-0'
+
+doctype html
+html(lang=locale)
+  head
+    block meta 
+      meta(charset="utf-8")
+      meta(name="google-site-verification" content=googleSiteVerification)
+      meta(property="fb:app_id" content=fbAppId)
+      meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+      meta(name="author" content=owner)
+      link(rel="shortcut icon", href="/public/favicon.ico", type="image/x-icon")
+    script(nonce=nonce).
+      if (localStorage.getItem('dark')) document.documentElement.classList.add('dark')
+    if prod
+        link(rel="stylesheet", type="text/css", href="/dist/main.css")
+    else
+        link(rel="stylesheet", type="text/css", href="/styles/style.css")
+  body(id=id, class=className)
+    include ../components/shared/header/header.pug
+    block intro
+    main 
+      block main
+    block outro
+    block footer
+      include ../components/shared/footer/footer.pug
+      include ../components/shared/cookie_layer/cookie_layer.pug
+      include ../components/shared/goto_top/goto_top.pug
+    if prod
+      script(src='/dist/main.js')
+    else
+      script(src='/scripts/index.js', type='module')
+    if prod
+      div(id="fb-root")
+      script(async defer crossorigin="anonymous" src=("https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v17.0&appId=" + fbAppId + "&autoLogAppEvents=1"))
+      script(nonce=nonce).
+        var sc_project = #{sc_project};
+         var sc_invisible = 1;
+         var sc_security = "#{sc_security}";
+      script(nonce=nonce).
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', "#{GATagId}");
+      script(async, defer, src='https://www.statcounter.com/counter/counter.js')
+      script(async, defer, src="https://www.googletagmanager.com/gtag/js?id=" + GATagId, nonce=nonce)
+      script(type='application/ld+json').
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "url": "#{proj_url}",
+            "name": "#{proj_name}",
+            "description": "#{description}",
+            "image": "#{logo}",
+            "author": {
+              "@type": "Person",
+              "name": "#{owner}"
+            },
+            "copyrightHolder": {
+              "@type": "Person",
+              "name": "#{owner}"
+            }
+          }
+

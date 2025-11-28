@@ -1,0 +1,50 @@
+#breadcrumbs {
+  border-bottom: 1px solid rgba(62, 120, 232, .2);
+  background-color: rgba(62, 120, 232, .2);
+  padding: var(--xx-small-space) var(--view-padding);
+  font-size: var(--font-size-small);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#breadcrumbs nav {
+  display: flex;
+  align-items: center;
+  margin: var(--x-small-space) var(--x-small-space);
+}
+
+#breadcrumbs span, #breadcrumbs a {
+  font-weight: 500;
+}
+
+#breadcrumbs nav a:not(:first-child)::before, #breadcrumbs nav span::before {
+  content: '\2192';
+  margin: .2rem;
+  color: var(--primary);
+}
+#breadcrumbs span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#breadcrumbs a[href] {
+  color: var(--link);
+}
+
+@media screen and (max-width: 1024px) {
+  #breadcrumbs span {
+    max-width: 34rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #breadcrumbs span {
+    max-width: 17rem;
+  }
+}
+@media screen and (max-width: 414px) {
+  #breadcrumbs span {
+    max-width: 12rem;
+  }
+}

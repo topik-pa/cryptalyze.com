@@ -1,0 +1,80 @@
+extends ../layout.pug
+
+block append meta
+  title #{title} | #{proj_name}
+  meta(name="description" content="")
+  meta(name="keywords" content="")
+  meta(name="robots" content="")
+  link(rel="canonical", href=proj_url + url)
+
+  meta(name="og:url" content="")
+  meta(name="og:type" content="")
+  meta(name="og:title" content="")
+  meta(name="og:site_name" content="")
+  meta(name="og:description" content="")
+  meta(name="og:image" content="")
+
+block main
+  h1 #{title}
+  form(action="#", method="get", autocomplete="off")
+    ul(id="errors", class="hide")
+    fieldset 
+      div(class="finput")
+        label(for="name") Nome:
+        input(type="text", name="name", id="name", placeholder="Nome", required)
+      div(class="finput")
+        label(for="email") Email:
+        input(type="email", name="email", id="email", placeholder="Email", pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$", required)
+      div(class="finput")
+        label(for="password") Password:
+        input(type="password", name="password", id="password", placeholder="Password", autocomplete, required)
+      div(class="finput")
+        label(for="number") Number:
+        input(type="number", name="number", id="number", min="5", max="10", step="0.1")
+    fieldset 
+      legend Text area
+      label(for="textarea") Text area:
+      textarea(name="textarea", cols="30", rows="10", id="textarea")
+    fieldset 
+      legend Radio
+      div(class="finput")
+        label(for="radio-one") Radio One:
+          input(type="radio", name="radio", value="one" id="radio-one", checked)
+          span
+      div(class="finput")
+        label(for="radio-two") Radio Two:
+          input(type="radio", name="radio", value="two" id="radio-two")
+          span
+      div(class="finput")
+        label(for="radio-three") Radio Three:
+          input(type="radio", name="radio", value="three" id="radio-three")
+          span
+    fieldset 
+      legend Checkbox
+      div(class="finput")
+        label(for="checkbox-one") Checkbox One:
+          input(type="checkbox", name="checkbox-one", value="one" id="checkbox-one", checked)
+          span
+      div(class="finput")
+        label(for="checkbox-two") Checkbox Two:
+          input(type="checkbox", name="checkbox-two", value="two" id="checkbox-two")
+          span
+      div(class="finput")
+        label(for="checkbox-three") Checkbox Three:
+          input(type="checkbox", name="checkbox-three", value="three" id="checkbox-three")
+          span
+    fieldset  
+      legend Select
+      label(for="select") Choose one:
+      select(name="select", id="select") 
+        optgroup(label="Numbers")
+          option(value="one") One
+          option(value="two") Two
+          option(value="three", selected) Three
+        optgroup(label="Letters")
+          option(value="A") A
+          option(value="B") B
+          option(value="C") C
+    section(class="buttons")
+      button(type="reset", class="btn secondary") Reset
+      button(type="submit", class="btn primary") Submit

@@ -1,0 +1,23 @@
+div(id="dtable")
+  table
+    //- caption Users table
+    thead 
+      //- APIRELATED
+      th(data-path="id") id
+      th(data-path="player1.name") P1 Name
+        input(type="text", placeholder="Filter...")
+      th(data-path="player2.name") P2 Name
+        input(type="text", placeholder="Filter...")
+      th(data-path="score") Score
+      th(data-path="tournament.name") Tournament
+        input(type="text", placeholder="Filter...")
+      th(data-path="tournament.value") Tournament Value
+      th(data-path="surface") Surface
+      th(data-path="createdAt") Date
+      //- APIRELATED
+    tbody
+  div(id="pagination")
+    div Page #[span(id="page")] of #[span(id="pages")] pages 
+    ul
+    div Showing #[span(id="start")] - #[span(id="end")] of #[span(id="total")] results
+    

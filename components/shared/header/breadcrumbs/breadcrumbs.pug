@@ -1,0 +1,9 @@
+if breadcrumbs
+  div(id="breadcrumbs") Sei in: 
+    nav
+      a(href="/", title="Home") Home
+      each elem in breadcrumbs
+        if elem.url
+          a(href=elem.url, title=__(elem.name)) !{__(elem.name)}
+        else 
+          span !{__(elem.name)}

@@ -1,0 +1,42 @@
+#plp {
+}
+
+#products {
+ display: flex;
+ flex-wrap: wrap;
+}
+
+#plp .product {
+  width: 18%;
+  margin: 1rem 0px;
+  margin-right: 2.5%;
+  border: 1px solid var(--wt);
+  box-sizing: border-box;
+  padding: var(--gap)
+}
+#plp .product:nth-of-type(5n) {
+  margin-right: 0;
+}
+
+#plp .product h2 {
+  margin-bottom: var(--small-space);
+}
+#plp .product img {
+  width: 100%;
+  padding-top: var(--gap)
+}
+#plp .product p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 130%;
+}
+
+#more {
+  text-align: center;
+  margin-top: calc(var(--xx-large-space) * 2);
+}
+
+#more.loading::after {
+  top: -50%;
+}
