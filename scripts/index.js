@@ -44,19 +44,14 @@ if (document.querySelector('body#home')) {
     module.home.init()
   })
 }
-if (document.querySelector('body#users')) {
-  import('../views/users/users.js').then((module) => {
-    module.users.init()
+if (document.querySelector('body#contacts')) {
+  import('../views/contacts/contacts.js').then((module) => {
+    module.contacts.init()
   })
 }
-if (document.querySelector('body#form')) {
-  import('../views/form/form.js').then((module) => {
-    module.form.init()
-  })
-}
-if (document.querySelector('body#plp')) {
-  import('../views/plp/plp.js').then((module) => {
-    module.plp.init()
+if (document.querySelector('body#transactions')) {
+  import('../views/transactions/transactions.js').then((module) => {
+    module.transactions.init()
   })
 }
 if (document.querySelector('body#privacy')) {

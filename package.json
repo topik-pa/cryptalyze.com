@@ -16,7 +16,9 @@
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "i18n": "^0.14.2",
-    "pug": "^3.0.2"
+    "multer": "^2.0.2",
+    "pug": "^3.0.2",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "css-loader": "^6.7.0",
@@ -28,7 +30,7 @@
     "eslint-plugin-promise": "^5.2.0",
     "jsdoc": "^4.0.2",
     "mini-css-extract-plugin": "^2.6.0",
-    "nodemon": "^2.0.22",
+    "nodemon": "^3.1.11",
     "webpack": "^5.70.0",
     "webpack-nano": "^1.1.1"
   }

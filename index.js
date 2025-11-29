@@ -1,11 +1,14 @@
 const express = require('express')
-const app = express()
 const { I18n } = require('i18n')
 const path = require('path')
 const compression = require('compression')
-require('dotenv').config()
 const crypto = require('crypto')
+
+require('dotenv').config()
+
 const PORT = process.env.PORT || 3000
+const app = express()
+
 
 // HTTPS redirect server-side
 /* app.use((req, res, next) => {
