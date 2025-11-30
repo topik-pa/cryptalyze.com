@@ -30,21 +30,23 @@ module.exports = (app, nonce) => {
         defval: ''
       })
       // sheet sarà un array di oggetti, uno per ogni riga
-      const transactions = sheet.map(row => ({
-        date: row['Date(UTC)'],
-        orderNo: row['Order No.'],
-        pair: row['Pair'],
-        baseAsset: row['Base Asset'],
-        quoteAsset: row['Quote Asset'],
-        type: row['Type'],
-        orderPrice: row['Order Price'],
-        orderAmount: row['Order Amount'],
-        avgTradingPrice: row['AvgTrading Price'],
-        filled: row['Filled'],
-        total: row['Total'],
-        triggerCondition: row['Trigger Condition'],
-        status: row['Status']
-      }))
+      const transactions = sheet.filter(row => {return row['Status'] === 'Filled'}).map(row => (
+        {
+          date: row['Date(UTC)'],
+          orderNo: row['Order No.'],
+          pair: row['Pair'],
+          baseAsset: row['Base Asset'],
+          quoteAsset: row['Quote Asset'],
+          type: row['Type'],
+          orderPrice: row['Order Price'],
+          orderAmount: row['Order Amount'],
+          avgTradingPrice: row['AvgTrading Price'],
+          filled: row['Filled'],
+          total: row['Total'],
+          triggerCondition: row['Trigger Condition'],
+          status: row['Status']
+        }
+      ))
       res.render('transactions/transactions', { id: 'transactions', title, url: req.url, breadcrumbs, nonce, transactions })
     } catch (error) {
       console.error(error)
