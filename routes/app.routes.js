@@ -12,7 +12,7 @@ module.exports = (app, nonce) => {
   })
 
   // Gestisce l'upload del file Excel
-  app.post('/transactions', upload.single('excelFile'), (req, res) => {
+  app.post('/transactions', upload.single('file'), (req, res) => {
     const title = 'Transactions'
     const breadcrumbs = [
       {
@@ -40,10 +40,8 @@ module.exports = (app, nonce) => {
           type: row['Type'],
           orderPrice: row['Order Price'],
           orderAmount: row['Order Amount'],
-          avgTradingPrice: row['AvgTrading Price'],
           filled: row['Filled'],
           total: row['Total'],
-          triggerCondition: row['Trigger Condition'],
           status: row['Status']
         }
       ))

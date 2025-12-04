@@ -19,9 +19,7 @@
 @import "/components/shared/header/breadcrumbs/breadcrumbs.css";
 
 @import "/views/home.css";
-@import "/views/users/users.css";
-@import "/views/plp/plp.css";
-@import "/views/form/form.css";
+@import "/views/transactions/transactions.css";
 @import "/views/privacy/privacy.css";
 @import "/views/404/404.css";
 @import "/views/500/500.css";
