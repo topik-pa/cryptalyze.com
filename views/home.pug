@@ -15,8 +15,14 @@ block append meta
   meta(name="og:image" content="")
 
 block main
-  h1 Carica il file Excel delle transazioni
+  h1 Upload your transaction history... so we can clarify it for you
+  p Currently, we can analyse #[em Benance] and #[em Bybit] file format only.
   form(action='/transactions', method='POST', enctype='multipart/form-data')
-    input(type='file', name='file', accept='.xlsx, .xls, .csv', required='true')
-    button(type='submit') Carica
+    input(id="fileInput" type='file', name='file', accept='.xlsx, .xls, .csv', required='true' hidden)
+
+    div#dropArea Drag the file here or click to select it
+    p#fileName
+
+    button(id="submitBtn", type='submit', class="btn primary disabled") Upload file
+    
 

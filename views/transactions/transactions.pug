@@ -21,10 +21,10 @@ block append meta
   meta(name="og:image" content="")
 
 block main
-  h1 Storico Transazioni Crypto
+  h1 Transaction history
   
   section
-    h2 Tabella
+    h2 Dynamic table
     table(border="1", cellpadding="6", id="table", class="table table-striped")
       thead
         tr
@@ -53,9 +53,8 @@ block main
             td= item.filled
             td= item.total
             td= item.status
-    button(onclick='window.print()', style='margin-bottom: 20px; padding: 10px 20px;')
-      | Stampa tabella
+    button(onclick='window.print()', style='margin-bottom: 20px; padding: 10px 20px;') Print data
 
   section(id="graph")
-    h2 Grafo
+    h2 Git-like graph
     div(id="gitgraph")

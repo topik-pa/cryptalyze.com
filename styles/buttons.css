@@ -6,7 +6,7 @@
   font-weight: 550;
   background: var(--blue);
   padding: 0.7rem 2rem;
-  color: var(--primary);
+  color: var(--secondary);
   cursor: pointer;
   border: 1px solid var(--darker-gray);
 }
@@ -28,4 +28,5 @@
 .btn.disabled {
   pointer-events: none;
   cursor: default;
+  background: var(--light-gray);
 }
