@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcriptalyze_com=self.webpackChunkcriptalyze_com||[]).push([[179],{179:(c,e,s)=>{s.d(e,{err404:()=>l});const l={init:async()=>{console.log("404")}}}}]);

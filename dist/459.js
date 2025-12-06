@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcriptalyze_com=self.webpackChunkcriptalyze_com||[]).push([[459],{459:(c,e,s)=>{s.d(e,{privacy:()=>a});const a={init:async()=>{console.log("Privacy")}}}}]);
