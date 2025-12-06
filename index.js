@@ -48,10 +48,10 @@ app.set('view engine', 'pug')
 
 if (process.env.NODE_ENV === 'development') {
   app.use('/components', express.static(path.join(__dirname, 'components')))
-  app.use('/scripts', express.static(path.join(__dirname, 'scripts')))
   app.use('/styles', express.static(path.join(__dirname, 'styles')))
   app.use('/views', express.static(path.join(__dirname, 'views')))
 }
+app.use('/scripts', express.static(path.join(__dirname, 'scripts')))
 app.use('/public', express.static(path.join(__dirname, 'public')))
 app.use('/assets', express.static(path.join(__dirname, 'assets')))
 app.use('/dist', express.static(path.join(__dirname, 'dist')))
