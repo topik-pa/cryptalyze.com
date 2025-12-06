@@ -15,7 +15,7 @@ block append meta
   meta(name="og:image" content="")
 
 block main
-  h1 Upload your transaction history... so we can clarify it for you
+  h1 Upload your transaction history... so we can clarify it for you!
   p Currently, we can analyse #[em Benance] and #[em Bybit] file format only.
   form(action='/transactions', method='POST', enctype='multipart/form-data')
     input(id="fileInput" type='file', name='file', accept='.xlsx, .xls, .csv', required='true' hidden)

@@ -47,7 +47,7 @@ em, .em {
 }
 
 p {
-  margin: var(--x-small-space) 0;
+  margin: var(--small-space) 0;
 }
 
 small {
