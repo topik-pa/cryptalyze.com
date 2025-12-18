@@ -42,8 +42,8 @@ const modules = {
 
 // Execute view specific script
 if (modules[pageId]) {
-  modules[pageId]().then((module) => {
-    module.default?.init?.()
+  await modules[pageId]().then(async(module) => {
+    await module.default?.init?.()
   }).catch((err) => {
     console.error('Failed to load module:', pageId, err)
   })
