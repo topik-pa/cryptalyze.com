@@ -6,8 +6,7 @@
     "nodejs",
     "mongodb",
     "pug",
-    "esm",
-    "boilerplate"
+    "esm"
   ],
   "license": "ISC",
   "author": "Marco Pavan",

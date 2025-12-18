@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcryptalize_com=self.webpackChunkcryptalize_com||[]).push([[642],{642:(t,e,c)=>{c.r(e),c.d(e,{default:()=>a});const a={init:async()=>{const t=await c.e(634).then(c.bind(c,634));try{document.adoptedStyleSheets=[t.default]}catch(t){}}}}}]);

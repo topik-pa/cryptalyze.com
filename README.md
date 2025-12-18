@@ -1,1 +1,1 @@
-# cryptalize.com FULL STACK BOILERPLATE
+# cryptalize.com
