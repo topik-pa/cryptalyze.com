@@ -1,7 +1,7 @@
 //- Layout Template Documentation
 //- ==============================
 //- 
-//- This is the main layout template for the PHOEBE application.
+//- This is the main layout template for the cryptalize.com application.
 //- It defines the base HTML structure and includes common components.
 //- 
 //- Variables:
@@ -46,13 +46,13 @@
 
 -
   let prod = process.env.NODE_ENV === 'production'
-  let proj_name = 'phoebe.com'
-  let proj_tagline = 'phoebe tagline'
-  let proj_url = 'https://phoebe.com'
+  let proj_name = 'cryptalize.com'
+  let proj_tagline = 'cryptalize.com tagline'
+  let proj_url = 'https://cryptalize.com'
   let proj_copy = 2026
   let proj_owner = 'Marco Pavan'
-  let proj_email = 'info@phoebe.com'
-  let proj_logo = 'https://phoebe.com/assets/images/logo.webp'
+  let proj_email = 'info@cryptalize.com'
+  let proj_logo = 'https://cryptalize.com/assets/images/logo.webp'
   let og_image = ''
   let sc_project = process.env.SC_PROJECT || null
   let sc_security = process.env.SC_SECURITY || null
@@ -94,11 +94,11 @@ html(lang=locale || 'en')
         "@graph": [
           {
             "@type": "Organization",
-            "@id": "https://phoebe.com/#organization",
-            "name": "phoebe.com",
-            "url": "https://phoebe.com",
-            "logo": "https://phoebe.com/assets/images/logo.webp",
-            "description": "phoebe",
+            "@id": "https://cryptalize.com/#organization",
+            "name": "cryptalize.com",
+            "url": "https://cryptalize.com",
+            "logo": "https://cryptalize.com/assets/images/logo.webp",
+            "description": "cryptalize.com",
             "sameAs": [
               "https://www.linkedin.com/in/markopavan/"
             ],
@@ -109,11 +109,11 @@ html(lang=locale || 'en')
           },
           {
             "@type": "WebSite",
-            "@id": "https://phoebe.com/#website",
-            "name": "phoebe.com",
-            "url": "https://phoebe.com",
+            "@id": "https://cryptalize.com/#website",
+            "name": "cryptalize.com",
+            "url": "https://cryptalize.com",
             "publisher": {
-              "@id": "https://phoebe.com/#organization"
+              "@id": "https://cryptalize.com/#organization"
             }
           }
         ]

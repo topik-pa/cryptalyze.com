@@ -1,5 +1,5 @@
 {
-  "name": "phoebe-full-stack-boilerplate",
+  "name": "cryptalize.com",
   "version": "1.0.0",
   "description": "Full-stack boilerplate with Node.js/MongoDB backend and Pug/CSS/JS frontend",
   "keywords": [
@@ -13,7 +13,7 @@
   "author": "Marco Pavan",
   "repository": {
     "type": "git",
-    "url": "https://github.com/topik-pa/PHOEBE.git"
+    "url": "https://github.com/topik-pa/cryptalyze.com.git"
   },
   "type": "module",
   "engines": {

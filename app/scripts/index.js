@@ -2,7 +2,7 @@
  * Main entry point for the application.
  * Initializes shared components and dynamically loads page-specific modules based on the page ID.
  * 
- * @file /home/marco/Progetti/PHOEBE/app/scripts/index.js
+ * @file /home/marco/Progetti/cryptalize/app/scripts/index.js
  * 
  * @description
  * This script performs the following operations:

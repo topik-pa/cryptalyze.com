@@ -22,7 +22,7 @@ export function viewController(req, res, viewId, breadcrumbs=[], data=[]) {
   const lang = req.params.lang || fallback
 
   const getViewParams = function(id, lang, path) {
-    const baseUrl = process.env.BASE_URL || 'https://phoebe.com'
+    const baseUrl = process.env.BASE_URL || 'https://cryptalize.com'
     const canonicalUrl = `${baseUrl}${path}`
     const hreflangs = supportedLangs.map(langCode => ({
       lang: langCode,
