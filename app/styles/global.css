@@ -20,12 +20,20 @@ html {
 
 body {
   font-family: "Saira", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-shadow: 0 0 1px transparent;
   text-rendering: optimizeLegibility;
   letter-spacing: .03rem;
   color: var(--secondary);
   background-color: var(--primary);
   font-size: var(--font-size-small);
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 a {
