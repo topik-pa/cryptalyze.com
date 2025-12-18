@@ -1,0 +1,11 @@
+footer {
+  padding: var(--main-padding) 0;
+  background: var(--secondary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+footer a {
+  color: var(--primary);
+}

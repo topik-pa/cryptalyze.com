@@ -1,0 +1,11 @@
+if breadcrumbs
+  div(id="breadcrumbs")
+    nav
+      a(href='/'+locale, title="Home")= __('views.home')
+      span &nbsp;
+      each elem in breadcrumbs
+        span &nbsp;&#10142;&nbsp;
+        if elem.url
+          a(href='/'+locale+'/'+elem.url, title=__('views.' + elem.name))= __('views.' + elem.name)
+        else
+          span= __('views.' + elem.name)

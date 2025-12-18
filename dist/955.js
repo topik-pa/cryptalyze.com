@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcriptalyze_com=self.webpackChunkcriptalyze_com||[]).push([[955],{955:(c,s,t)=>{t.d(s,{contacts:()=>e});const e={init:async()=>{console.log("Contacts")}}}}]);

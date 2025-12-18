@@ -1,0 +1,22 @@
+#breadcrumbs {
+  border-bottom: 1px solid var(--darker-gray);
+  text-align: center;
+  padding-bottom: var(--main-padding);
+  margin-bottom: calc(var(--main-padding) * 2);
+  color: var(--secondary);
+}
+
+#breadcrumbs nav {
+  display: inline-block;
+}
+
+#breadcrumbs span, #breadcrumbs a {
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  #breadcrumbs a:nth-of-type(3) {
+    display: block;
+    margin-top: var(--xx-small-space);
+  }
+}

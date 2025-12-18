@@ -1,0 +1,80 @@
+/**
+ * Root and body element styles
+ * 
+ * This ruleset defines the base styles for the html and body elements,
+ * establishing the foundation for the entire document's styling.
+ * These elements are typically used to set global defaults such as:
+ * - Font family and size
+ * - Background colors
+ * - Margins and padding reset
+ * - Box-sizing model
+ * - Viewport height settings
+ */
+ 
+html, body {
+  height: 100%;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Saira", sans-serif;
+  text-shadow: 0 0 1px transparent;
+  text-rendering: optimizeLegibility;
+  letter-spacing: .03rem;
+  color: var(--secondary);
+  background-color: var(--primary);
+  font-size: var(--font-size-small);
+}
+
+a {
+  color: var(--link);
+  position: relative;
+}
+a.ext::after {
+  content: '\21F1';
+  transform: rotate(90deg);
+  display: inline-block;
+  position: relative;
+  top: -3px;
+  font-size: 9px;
+  right: 0;
+}
+
+em, .em {
+  font-weight: 500;
+  font-style: italic;
+}
+
+p {
+  margin: var(--small-space) 0;
+  line-height: 130%;
+}
+
+small {
+  font-size: 70%;
+}
+
+.clear {
+  clear: both;
+}
+
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+
+.center {
+  text-align: center;
+}
+
+main {
+  padding: var(--main-padding);
+}
+
+section {
+  margin-bottom: var(--xx-large-space);
+}

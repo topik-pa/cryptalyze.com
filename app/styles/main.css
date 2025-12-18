@@ -1,0 +1,29 @@
+
+/**
+ * Main stylesheet entry point for the PHOEBE application.
+ * 
+ * This file serves as the root stylesheet and imports CSS variables
+ * from a separate variables file to maintain consistent theming and
+ * design tokens throughout the application.
+ * 
+ * @file Main CSS entry point
+ * @requires ./variables.css - Contains CSS custom properties and design tokens
+ */
+ 
+@import "./variables.css";
+@import "./reset.min.css";
+@import "./global.css";
+@import "./icons.css";
+@import "./image-icons.css";
+@import "./fonts.css";
+@import "./headings.css";
+@import "./buttons.css";
+@import "./loading.css";
+@import "./responsive.css";
+
+
+@import "../views/components/shared/footer/footer.css";
+@import "../views/components/shared/header/header.css";
+@import "../views/components/shared/goto_top/goto_top.css";
+@import "../views/components/shared/breadcrumbs/breadcrumbs.css";
+@import "../views/components/shared/cookie_layer/cookie_layer.css";

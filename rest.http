@@ -1,5 +1,60 @@
-### Welcome message
-GET http://localhost:3000
+### PUBLIC
+### sitemap.xml
+GET http://localhost:3000/sitemap.xml
 
-###
-GET http://localhost:3000/api/test
+### robots.txt
+GET http://localhost:3000/robots.txt
+
+### favicon
+GET http://localhost:3000/favicon.ico
+
+
+
+### UI
+### Index
+GET http://localhost:3000/
+
+### Users
+GET http://localhost:3000/it/users
+
+### Contacts
+GET http://localhost:3000/it/contacts 
+
+### PrivacyPolicy
+GET http://localhost:3000/it/privacy
+
+
+
+### API
+### OK All users
+GET http://localhost:3000/api/users/
+
+### OK User by ID
+GET http://localhost:3000/api/users/693ac65228077994449a00dd
+
+### OK User by username
+GET http://localhost:3000/api/users/username/Sara%20Neri
+
+### Create a new user
+POST http://localhost:3000/api/users/
+Content-Type: application/json
+
+{
+  "name": "Gabriella",
+  "userId": 77,
+  "age": 66
+}
+
+
+### Update user by ID
+PUT http://localhost:3000/api/users/693ac65228077994449a00dd
+Content-Type: application/json
+
+{
+  "age": 67
+}
+
+
+### Delete user by ID
+DELETE http://localhost:3000/api/users/693ac65228077994449a00dd
+

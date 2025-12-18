@@ -1,0 +1,102 @@
+:root {
+  /**
+   * CSS Variables Definition File
+   * 
+   * This file contains all CSS custom properties (variables) used throughout the application.
+   * It serves as a central location for managing design tokens and maintaining consistency
+   * across the entire project.
+   * 
+   * @file variables.css
+   * @description Global CSS variables for colors, spacing, typography, and other design tokens
+   * @project PHOEBE
+   * @path /home/marco/Progetti/PHOEBE/app/styles/variables.css
+   * 
+   * Usage:
+   * - Import this file at the root of your main stylesheet
+   * - Reference variables using var(--variable-name)
+   * - Organize variables by category (colors, spacing, typography, etc.)
+   * 
+   * Example:
+   * .element {
+   *   color: var(--primary-color);
+   *   padding: var(--spacing-md);
+   * }
+   */
+   
+  /* COLORS */
+  --white:         #FAF9F6;
+  --lightest-gray: #EAE9E6;
+  --lighter-gray:  #D4D3D0;
+  --light-gray:    #B9B8B5;
+  --gray:          #9E9D99;
+  --dark-gray:     #7D7C78;
+  --darker-gray:   #5D5C58;
+  --darkest-gray:  #3C3B38;
+  --black:         #191815;
+
+  --blue: #3F6580;
+  --red:  #CD212A;
+  --green:#009e4f;
+  --gold:   #ffd700;
+  --silver: #aaa9ad;
+  --bronze: #cd7f32;
+
+  --primary: var(--white);
+  --secondary: var(--darkest-gray);
+  --tertiary: var(--blue);
+
+  --error: var(--red);
+  --success: var(--green);
+  --link: var(--blue);
+  --text: var(--secondary);
+  --background: var(--primary);
+
+  /* TRANSPARENCIES */
+  --transparent: .1;
+  --semi-transparent: .85;
+
+  /* FONT SIZES */
+  --font-size-x-small: .81rem;
+  --font-size-small: .9rem;
+  --font-size-base: 1.11rem;
+  --font-size-big: 1.411rem;
+  --font-size-bigger: 1.793rem;
+  --font-size-huge: 2.279rem;
+  --font-size-biggest: 2.7rem;
+
+  /* SHADOWS */
+  --shadow: 0 0 10px 0 var(--black);
+  --text-shadow: 1px 1px 1px var(--black);
+
+  /* DIMENSIONS */
+  --xx-small-space: .2rem;
+  --x-small-space: .5rem;
+  --small-space: .8rem;
+  --base-space: 1rem;
+  --large-space: 1.3rem;
+  --x-large-space: 2.1rem;
+  --xx-large-space: 3.4rem;
+  --xxx-large-space: 4.5rem;
+
+  --main-padding: var(--small-space);
+  --section-margin: var(--xx-large-space);
+
+  /* ICONS */
+  --small-icon: var(--small-space);
+  --normal-icon: var(--base-space);
+  --big-icon: var(--x-large-space);
+
+  /* BORDER RADIUS */
+  --border-radius-small: var(--xx-small-space);
+  --border-radius-big: var(--small-space);
+  --border-radius-round: 50%;
+
+  /* Z-INDEXES */
+  --loading:      9;
+  --disclaimer:   9;
+  --main-menu:    99;
+  --modal:        999;
+  --privacy:      9999;
+  --gototop:      99999;
+  --spotLayer:    999999;
+}

@@ -1,0 +1,121 @@
+//- Layout Template Documentation
+//- ==============================
+//- 
+//- This is the main layout template for the PHOEBE application.
+//- It defines the base HTML structure and includes common components.
+//- 
+//- Variables:
+//- ----------
+//- @param {boolean} prod - Production environment flag (from NODE_ENV)
+//- @param {string} proj_name - Project name displayed across the site
+//- @param {string} proj_tagline - Project tagline/slogan
+//- @param {string} proj_url - Canonical URL of the project
+//- @param {number} proj_copy - Copyright year
+//- @param {string} proj_owner - Project owner name
+//- @param {string} proj_email - Contact email address
+//- @param {string} proj_logo - URL to project logo image
+//- @param {string} og_image - Open Graph image URL (optional)
+//- @param {string|null} sc_project - StatCounter project ID from environment variables
+//- @param {string|null} sc_security - StatCounter security token from environment variables
+//- @param {string} locale - Page language code (defaults to 'en')
+//- @param {string} id - Body element ID
+//- @param {string} className - Main element CSS class
+//- @param {string} nonce - Content Security Policy nonce for inline scripts
+//- 
+//- Blocks:
+//- -------
+//- @block meta - Override or extend default meta tags
+//- @block main - Main content area for page-specific content
+//- 
+//- Features:
+//- ---------
+//- - Conditional asset loading based on environment (dev/prod)
+//- - DNS prefetching for StatCounter analytics
+//- - Open Graph meta tags for social media sharing
+//- - StatCounter analytics integration (production only)
+//- - Structured data (JSON-LD) for SEO with Organization and WebSite schemas
+//- - Responsive viewport configuration
+//- - Modular component includes (header, footer, cookie layer, goto top)
+//- 
+//- Dependencies:
+//- -------------
+//- - ./components/shared/header/header.pug
+//- - ./components/shared/cookie_layer/cookie_layer.pug
+//- - ./components/shared/footer/footer.pug
+//- - ./components/shared/goto_top/goto_top.pug
+
+-
+  let prod = process.env.NODE_ENV === 'production'
+  let proj_name = 'phoebe.com'
+  let proj_tagline = 'phoebe tagline'
+  let proj_url = 'https://phoebe.com'
+  let proj_copy = 2026
+  let proj_owner = 'Marco Pavan'
+  let proj_email = 'info@phoebe.com'
+  let proj_logo = 'https://phoebe.com/assets/images/logo.webp'
+  let og_image = ''
+  let sc_project = process.env.SC_PROJECT || null
+  let sc_security = process.env.SC_SECURITY || null
+
+doctype html
+html(lang=locale || 'en')
+  head
+    block meta 
+      meta(charset="utf-8")
+      meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+      meta(name="author" content=proj_owner + ' - ' + proj_email)
+      link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+      if prod
+        link(rel="stylesheet", type="text/css", href="/dist/main.css")
+        script(src='/dist/bundle.js', defer)
+      else
+        link(rel="stylesheet", type="text/css", href="/styles/main.css")
+        script(src='/scripts/index.js', type='module', defer)
+      link(rel="dns-prefetch" href="https://www.statcounter.com")
+      link(rel="dns-prefetch" href="https://c.statcounter.com")
+      meta(property="og:type" content="website")
+      meta(property="og:site_name" content=proj_name)
+  body(id=id)
+    include ./components/shared/header/header.pug
+    main(class=className)
+      block main
+    include ./components/shared/cookie_layer/cookie_layer.pug
+    include ./components/shared/footer/footer.pug
+    include ./components/shared/goto_top/goto_top.pug
+    if prod
+      script(nonce=nonce).
+          var sc_project = #{sc_project};
+          var sc_invisible = 1;
+          var sc_security = "#{sc_security}";
+      script(async, defer, src='https://www.statcounter.com/counter/counter.js', nonce=nonce)
+    script(type='application/ld+json').
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://phoebe.com/#organization",
+            "name": "phoebe.com",
+            "url": "https://phoebe.com",
+            "logo": "https://phoebe.com/assets/images/logo.webp",
+            "description": "phoebe",
+            "sameAs": [
+              "https://www.linkedin.com/in/markopavan/"
+            ],
+            "founder": {
+              "@type": "Person",
+              "name": "Marco Pavan"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://phoebe.com/#website",
+            "name": "phoebe.com",
+            "url": "https://phoebe.com",
+            "publisher": {
+              "@id": "https://phoebe.com/#organization"
+            }
+          }
+        ]
+      }
+    

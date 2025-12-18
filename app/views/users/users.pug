@@ -1,0 +1,53 @@
+//- USERS PAGE TEMPLATE
+//- 
+//- This template displays a list of users in the system.
+//- 
+//- Template structure:
+//- - Extends the main layout template
+//- - Sets up SEO meta tags (Open Graph, title, description, keywords)
+//- - Includes canonical URL and alternate language links (hreflang)
+//- - Displays a breadcrumb navigation component
+//- - Shows a list of users with their ID, name, and age
+//- 
+//- Expected variables:
+//- @param {Function} __ - Internationalization function for translating strings
+//- @param {string} og_image - URL for the Open Graph image
+//- @param {string} canonicalUrl - Canonical URL for this page
+//- @param {Array<Object>} hreflangs - Array of alternate language links
+//- @param {string} hreflangs[].lang - Language code (e.g., 'en', 'es')
+//- @param {string} hreflangs[].url - URL for the alternate language version
+//- @param {Array<Object>} data - Array of user objects to display
+//- @param {number} data[].userId - Unique identifier for the user
+//- @param {string} data[].name - Name of the user
+//- @param {number} data[].age - Age of the user
+//- 
+//- Usage:
+//- This template should be rendered with user data from the database.
+//- If no users exist, a "No users found" message is displayed.
+
+extends ../layout.pug
+
+block append meta
+  meta(property="og:title" content=__('proj_tagline') + ' | ' + __('proj_name') )
+  meta(property="og:description" content=__('proj_description'))
+  meta(property="og:image" content=og_image)
+  meta(property="og:url" content=canonicalUrl)
+
+  title= __('proj_tagline') + ' | ' + __('proj_name')
+  meta(name="description" content=__('proj_description'))
+  meta(name="keywords" content=__('index.meta.keywords'))
+
+  link(rel="canonical", href=canonicalUrl)
+  each link in hreflangs
+    link(rel="alternate", hreflang=link.lang, href=link.url)
+
+block main
+  include ../components/shared/breadcrumbs/breadcrumbs.pug
+  
+  h1 Users
+  if data.length === 0
+    p No users found.
+  else
+    ul 
+      each user in data
+        li= `ID: ${user.userId} - Name: ${user.name} -  Age: ${user.age}`
