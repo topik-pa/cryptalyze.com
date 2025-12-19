@@ -2,10 +2,11 @@
 	"hello": "Hello",
   "proj_name": "cryptalize.com",
   "proj_description": "cryptalize.com description",
-  "proj_tagline": "cryptalize.com tagline",
+  "proj_tagline": "Clearifies your messy crypto transactions history!",
   "views": {
-    "home": "Home",
-    "users": "Utenti",
+    "home": "Dashboard",
+    "transactions": "Transactions",
+    "analysis": "Analysis",
     "privacy": "Privacy",
     "contacts": "Contacts"
   },
@@ -16,7 +17,31 @@
     "meta": {
       "keywords": ""
     },
-    "title": "Home page"
+    "title": "Dashboard",
+    "upload-csv": {
+      "title": "Upload your transaction history... so we can clarify it for you!",
+      "text": "Currently, we can analyse <em>Benance</em> and </em>Bybit</em> file format only."
+    },
+    "loaded-csv": {
+      "title": "Uploaded transactions file so far...",
+      "text": "These are the transactions sources currently uploaded"
+    }
+  },
+  "transactions": {
+    "meta": {
+      "keywords": "transactions",
+      "title": "Transactions",
+      "description": "Transactions page"
+    },
+    "title": "Transactions"
+  },
+  "analysis": {
+    "meta": {
+      "keywords": "analysis",
+      "title": "Analysis",
+      "description": "Analysis page"
+    },
+    "title": "analysis"
   },
   "contacts": {
     "meta": {

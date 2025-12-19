@@ -1,0 +1,51 @@
+extends ../layout.pug
+
+block append meta
+  meta(property="og:title" content=__('views.transactions') + ' | ' + __('proj_name'))
+  meta(property="og:description" content=__('transactions.meta.description'))
+  meta(property="og:image" content=og_image)
+  meta(property="og:url" content=canonicalUrl)
+
+  title= __('views.transactions') + ' | ' + proj_name
+  meta(name="description" content=__('transactions.meta.description'))
+  meta(name="keywords" content=__('transactions.meta.keywords'))
+
+  link(rel="canonical", href=canonicalUrl)
+  each link in hreflangs
+    link(rel="alternate", hreflang=link.lang, href=link.url)
+
+block main
+  include ../components/shared/breadcrumbs/breadcrumbs.pug
+
+  h1= __('transactions.title')
+
+  section
+    h2 Dynamic table
+    table(border="1", cellpadding="6", id="table", class="table table-striped")
+      thead
+        tr
+          th Date(UTC)
+          th Order No.
+          th Pair
+          th Base Asset
+          th Quote Asset
+          th Type
+          th Order Price
+          th Order Amount
+          th Filled
+          th Total
+          th Status
+      tbody
+        each item in transactions
+          tr
+            td= item.date
+            td= item.orderNo
+            td= item.pair
+            td= item.baseAsset
+            td= item.quoteAsset
+            td= item.type
+            td= item.orderPrice
+            td= item.orderAmount
+            td= item.filled
+            td= item.total
+            td= item.status

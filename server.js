@@ -134,8 +134,11 @@ app.use((req, res, next) => {
 //Routes
 import apiRoutes from './app/routes/api.routes.js'
 app.use('/api', apiRoutes)
+import serviceRoutes from './app/routes/service.routes.js'
+app.use('/service', serviceRoutes)
 import uiRoutes from './app/routes/ui.routes.js'
 app.use('/', uiRoutes)
+
 // 404 handling
 app.use((req, res) => {
   res.status(404).render('4xx/404')
@@ -153,7 +156,7 @@ app.use((err, _req, res, _next) => {
 // Database connection
 import { connectToDB } from './app/db/mongoose.js'
 if (process.env.NODE_ENV !== 'test') {
-  await connectToDB()
+  // await connectToDB()
 }
 
 export { app, i18n }

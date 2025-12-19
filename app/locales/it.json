@@ -2,10 +2,11 @@
 	"hello": "Ciao",
   "proj_name": "cryptalize.com",
   "proj_description": "cryptalize.com descrizione",
-  "proj_tagline": "cryptalize.com tagline",
+  "proj_tagline": "Chiarisce la storia intricata delle tue crypto transazioni!",
   "views": {
-    "home": "Home",
-    "users": "Utenti",
+    "home": "Dashboard",
+    "transactions": "Transazioni",
+    "analysis": "Analisi",
     "privacy": "Privacy",
     "contacts": "Contatti"
   },
@@ -16,7 +17,31 @@
     "meta": {
       "keywords": ""
     },
-    "title": "Home page"
+    "title": "Dashboard",
+    "upload-csv": {
+      "title": "Trascina qui i file delle tue transazioni... Ti aiuteremo a chiarirli!",
+      "text": "Attualmente, possiamo analizzare solo i formati di file <em>Binance</em> e <em>Bybit</em>."
+    },
+    "loaded-csv": {
+      "title": "I file delle transazioni già caricati...",
+      "text": "Queste sono le sorgenti attualmente caricate."
+    }
+  },
+  "transactions": {
+    "meta": {
+      "keywords": "transazioni",
+      "title": "Transazioni",
+      "description": "Pagina Transazioni"
+    },
+    "title": "Transazioni"
+  },
+  "analysis": {
+    "meta": {
+      "keywords": "analysis",
+      "title": "Analisi",
+      "description": "Pagina Analisi"
+    },
+    "title": "Analisi"
   },
   "contacts": {
     "meta": {

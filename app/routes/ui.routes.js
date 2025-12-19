@@ -57,6 +57,19 @@ router.get(`/:lang(${LANG_REGEX})/users`, async(req, res) => {
   }
 })
 
+// Transactions
+router.get(
+  `/:lang(${LANG_REGEX})/transactions`, 
+  (req, res) => viewController(req, res, 'transactions', [{ name: 'transactions' }]))
+
+// Analysis
+router.get(
+  `/:lang(${LANG_REGEX})/analysis`, 
+  (req, res) => viewController(req, res, 'analysis', [{ name: 'analysis' }]))
+
+// Contacts
+router.get(`/:lang(${LANG_REGEX})/contacts`, (req, res) => viewController(req, res, 'contacts', [{ name: 'contacts' }]))
+
 // Privacy
 router.get(`/:lang(${LANG_REGEX})/privacy`, (req, res) => viewController(req, res, 'privacy', [{ name: 'privacy' }]))
 
