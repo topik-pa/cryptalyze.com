@@ -52,5 +52,8 @@ export default defineConfig([
       'app/views/**/*.{js,mjs,cjs}'
     ],
     languageOptions: { globals: globals.browser }
+  },
+  {
+    ignores: ['app/scripts/vendors/datatables.min.js']
   }
 ])
