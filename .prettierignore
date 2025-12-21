@@ -1,0 +1,15 @@
+# Minified files
+*.min.css
+*.min.js
+
+# Vendor files
+app/scripts/vendors/
+app/styles/vendors/
+
+# Build output
+dist/
+build/
+uploads/
+
+# Dependencies
+node_modules/
