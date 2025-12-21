@@ -26,15 +26,20 @@
 
 import express from 'express'
 import path from 'path'
+import multer from 'multer'
+import { fileURLToPath } from 'url'
 import { getAllUsers } from '../controllers/db.controller.js'
 import { viewController } from '../controllers/ui.controller.js'
-import { fileURLToPath } from 'url'
+import getTransactions from './get-transactions.js'
 
 const router = express.Router()
 const LANG_REGEX = 'it|en'
 
+const upload = multer({ dest: 'uploads/' })
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
+// sitemap.xml
 router.get('/sitemap.xml', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/sitemap.xml'))
 })
@@ -61,6 +66,20 @@ router.get(`/:lang(${LANG_REGEX})/users`, async(req, res) => {
 router.get(
   `/:lang(${LANG_REGEX})/transactions`, 
   (req, res) => viewController(req, res, 'transactions', [{ name: 'transactions' }]))
+
+router.post(
+  '/transactions', 
+  upload.single('file'),
+  async(req, res) => {
+    if (!req.file) {
+      return res.status(400).send({ error: 'No file uploaded' })
+    }
+    const transactions = await getTransactions(req.file)
+    if (transactions.error) {
+      return res.status(500).send({ error: transactions.error })
+    }
+    viewController(req, res, 'transactions', [{ name: 'transactions' }], transactions.data)
+  })
 
 // Analysis
 router.get(

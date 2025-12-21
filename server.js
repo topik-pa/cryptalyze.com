@@ -134,8 +134,6 @@ app.use((req, res, next) => {
 //Routes
 import apiRoutes from './app/routes/api.routes.js'
 app.use('/api', apiRoutes)
-import serviceRoutes from './app/routes/service.routes.js'
-app.use('/service', serviceRoutes)
 import uiRoutes from './app/routes/ui.routes.js'
 app.use('/', uiRoutes)
 
