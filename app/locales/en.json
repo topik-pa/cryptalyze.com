@@ -13,6 +13,16 @@
   "breadcrumbs": {
     "text": "You are on: "
   },
+  "column": {
+    "stats": {
+      "title": "Statistics",
+      "total-files": "Total files uploaded: ",
+      "total-transactions": "Total transactions uploaded:"
+    },
+    "files": {
+      "title": "Uploaded files"
+    }
+  },
   "home": {
     "meta": {
       "keywords": ""
@@ -20,11 +30,8 @@
     "title": "Dashboard",
     "upload-csv": {
       "title": "Upload your transaction history... so we can clarify it for you!",
-      "text": "Currently, we can analyse <em>Benance</em> and </em>Bybit</em> file format only."
-    },
-    "loaded-csv": {
-      "title": "Uploaded transactions file so far...",
-      "text": "These are the transactions sources currently uploaded"
+      "text": "Currently, we can analyse <em>Benance</em> and </em>Bybit</em> file format only.",
+      "upload-button": "Upload file"
     }
   },
   "transactions": {
@@ -41,7 +48,7 @@
       "title": "Analysis",
       "description": "Analysis page"
     },
-    "title": "analysis"
+    "title": "Analysis"
   },
   "contacts": {
     "meta": {

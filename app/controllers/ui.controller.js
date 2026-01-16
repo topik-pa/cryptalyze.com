@@ -16,7 +16,7 @@
 
 import { i18n } from '../../server.js'
 
-export function viewController(req, res, viewId, breadcrumbs=[], data=[]) {
+export function viewController(req, res, viewId, breadcrumbs=[], data=null) {
   const supportedLangs = ['en', 'it']
   const fallback = 'en'
   const lang = req.params.lang || fallback

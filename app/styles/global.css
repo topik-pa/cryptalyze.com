@@ -10,10 +10,12 @@
  * - Box-sizing model
  * - Viewport height settings
  */
- 
-html, body {
+
+html,
+body {
   height: 100%;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -40,6 +42,7 @@ a {
   color: var(--link);
   position: relative;
 }
+
 a.ext::after {
   content: '\21F1';
   transform: rotate(90deg);
@@ -50,7 +53,8 @@ a.ext::after {
   right: 0;
 }
 
-em, .em {
+em,
+.em {
   font-weight: 500;
   font-style: italic;
 }
@@ -71,6 +75,7 @@ small {
 .hide {
   display: none !important;
 }
+
 .show {
   display: block !important;
 }
@@ -85,4 +90,39 @@ main {
 
 section {
   margin-bottom: var(--xx-large-space);
+}
+
+.layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.layout main {
+  width: calc(80% - var(--main-padding) * 2);
+  padding: var(--main-padding);
+}
+
+.layout #column {
+  padding: var(--main-padding);
+  background: var(--darker-gray);
+  position: relative;
+  width: calc(20% - var(--main-padding) * 2);
+  min-width: 250px;
+  transition: all .4s ease-in-out;
+}
+
+.layout #column.collapsed {
+  width: 5%;
+}
+
+@media screen and (max-width: 768px) {
+  .layout main {
+    width: calc(64% - var(--main-padding) * 2);
+  }
+
+  .layout #column {
+    width: calc(36% - var(--main-padding) * 2);
+    min-width: 120px;
+  }
 }

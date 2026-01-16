@@ -27,6 +27,8 @@
 import mainMenu from '../views/components/shared/header/main-menu/main-menu.js'
 import gotoTop from '../views/components/shared/goto_top/goto_top.js'
 import cookieLayer from '../views/components/shared/cookie_layer/cookie_layer.js'
+import column from '../views/components/shared/column/column.js'
+import './CmpBullet.js'
 
 const pageId = document.body.id
 
@@ -34,11 +36,12 @@ mainMenu.toggleMobileMenu()
 gotoTop.init()
 cookieLayer.init()
 
+
 // Import views specific scripts
 const modules = {
   home: () => import('../views/home/home.js'),
   transactions: () => import('../views/transactions/transactions.js'),
-  users: () => import('../views/users/users.js')
+  analysis: () => import('../views/analysis/analysis.js')
 }
 
 // Execute view specific script
@@ -49,4 +52,6 @@ if (modules[pageId]) {
     console.error('Failed to load module:', pageId, err)
   })
 }
+
+column.init()
 

@@ -13,6 +13,16 @@
   "breadcrumbs": {
     "text": "Sei in: "
   },
+  "column": {
+    "stats": {
+      "title": "Statistiche",
+      "total-files": "Totale file caricati: ",
+      "total-transactions": "Totale transazioni caricate: "
+    },
+    "files": {
+      "title": "File caricati"
+    }
+  },
   "home": {
     "meta": {
       "keywords": ""
@@ -20,11 +30,8 @@
     "title": "Dashboard",
     "upload-csv": {
       "title": "Trascina qui i file delle tue transazioni... Ti aiuteremo a chiarirli!",
-      "text": "Attualmente, possiamo analizzare solo i formati di file <em>Binance</em> e <em>Bybit</em>."
-    },
-    "loaded-csv": {
-      "title": "I file delle transazioni già caricati...",
-      "text": "Queste sono le sorgenti attualmente caricate."
+      "text": "Attualmente, possiamo analizzare solo i formati di file <em>Binance</em> (Excel) e <em>Bybit</em> (CSV).",
+      "upload-button": "Carica file"
     }
   },
   "transactions": {

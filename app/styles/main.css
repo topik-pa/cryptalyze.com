@@ -1,4 +1,3 @@
-
 /**
  * Main stylesheet entry point for the cryptalize application.
  * 
@@ -9,7 +8,7 @@
  * @file Main CSS entry point
  * @requires ./variables.css - Contains CSS custom properties and design tokens
  */
- 
+
 @import "./variables.css";
 @import "./reset.min.css";
 @import "./global.css";
@@ -27,3 +26,4 @@
 @import "../views/components/shared/goto_top/goto_top.css";
 @import "../views/components/shared/breadcrumbs/breadcrumbs.css";
 @import "../views/components/shared/cookie_layer/cookie_layer.css";
+@import "../views/components/shared/column/column.css";

@@ -78,7 +78,7 @@ router.post(
     if (transactions.error) {
       return res.status(500).send({ error: transactions.error })
     }
-    viewController(req, res, 'transactions', [{ name: 'transactions' }], transactions.data)
+    viewController(req, res, 'transactions', [{ name: 'transactions' }], transactions)
   })
 
 // Analysis

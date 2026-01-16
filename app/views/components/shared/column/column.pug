@@ -1,0 +1,15 @@
+aside(id="column") 
+  span(id="colcollapse", class="icon-cheveron-up hide")
+  section 
+    h3= __('column.stats.title')
+    ul#stats
+      li= __('column.stats.total-files')
+        em#total-files 0
+      li= __('column.stats.total-transactions')
+        em#total-transactions 0
+
+    hr
+
+    h3= __('column.files.title')
+    div#loaded-files
+  

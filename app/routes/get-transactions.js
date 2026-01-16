@@ -1,6 +1,7 @@
 import XLSX from 'xlsx'
 import fs from 'fs'
 import csv from 'csv-parser'
+import crypto from 'crypto'
 
 export default function getTransactions(file) {
 
@@ -38,7 +39,14 @@ export default function getTransactions(file) {
           status: row['Status']
         }
       ))
-      return { data: transactions }
+      return { 
+        id: crypto.randomBytes(16).toString('base64'),
+        date: new Date().getTime(),
+        format: 'excel',
+        exchange: 'binance',
+        origin: file.originalname.toLowerCase(),
+        data: transactions 
+      }
     }
   }
 
@@ -98,7 +106,14 @@ export default function getTransactions(file) {
             transactions = Array.from(map.values())
             transactions.sort((a, b) => parseFloat(a.ts) - parseFloat(b.ts))
           }
-          resolve({ data: transactions })
+          resolve({ 
+            id: crypto.randomBytes(16).toString('base64'),
+            date: new Date().getTime(),
+            format: 'csv',
+            exchange: 'bybit',
+            origin: file.originalname.toLowerCase(),
+            data: transactions 
+          })
         })
         .on('error', (err) => {
           reject({ error: 'Error reading CSV file:', err })

@@ -18,35 +18,13 @@ block append meta
   link(rel='stylesheet', href='/styles/vendors/datatables.min.css')
 
 block main
+  if data
+    input(type="hidden", id="transactions-data", data-transactions=JSON.stringify(data))
   include ../components/shared/breadcrumbs/breadcrumbs.pug
 
   h1= __('transactions.title')
 
-  table(border="1", cellpadding="6", id="table", class="table table-striped")
-    thead
-      tr
-        th Date(UTC)
-        th Order No.
-        th Pair
-        th Base Asset
-        th Quote Asset
-        th Type
-        th Order Price
-        th Order Amount
-        th Filled
-        th Total
-        th Status
-    tbody
-      each item in data
-        tr
-          td= item.date
-          td= item.orderNo
-          td= item.pair
-          td= item.baseAsset
-          td= item.quoteAsset
-          td= item.type
-          td= item.orderPrice
-          td= item.orderAmount
-          td= item.filled
-          td= item.total
-          td= item.status
+  div#transactions-table-container
+
+block column 
+  include ../components/shared/column/column.pug

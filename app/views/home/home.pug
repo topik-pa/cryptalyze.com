@@ -44,7 +44,7 @@ block main
       div#drop Drag the file here or click to select it
       p#file-name
 
-      button(id="upload-transactions", type='submit', class="btn primary disabled") Upload file
-  section 
-    h2= __('home.loaded-csv.title')
-    p= __('home.loaded-csv.text')
+      button(id="upload-transactions", type='submit', class="btn primary disabled")= __('home.upload-csv.upload-button')
+  
+block column 
+  include ../components/shared/column/column.pug
