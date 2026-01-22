@@ -88,6 +88,33 @@ export default function getTransactions(file) {
               transactions.push(transaction)
             }
           }
+          if(
+            row['_0'] && 
+            row['_1'] && 
+            row['_10'] &&
+            row['_0'] !== 'ID'
+          ) {
+            //Coinbase format
+            csvFormat = 'Coinbase'
+            if (row['_2'] === 'Buy' || row['_2'] === 'Sell') {
+              const transaction = {
+                ts: new Date(row['_1']).getTime(),
+                date: row['_1'],
+                orderNo: row['_0'],
+                pair: row['_3']+'/'+row['_5'],
+                baseAsset: row['_3'],
+                quoteAsset: row['_5'],
+                type: row['_2'],
+                orderPrice: row['_6'],
+                orderAmount: row['_7'],
+                filled: +row['_4'],
+                total: row['_8'],
+                status: 'Filled'
+              }
+              transactions.push(transaction)
+            }
+            //reject({ error: 'Coinbase' })
+          }
         })
         .on('end', () => {
           fs.unlinkSync(filePath)
@@ -105,15 +132,18 @@ export default function getTransactions(file) {
             }
             transactions = Array.from(map.values())
             transactions.sort((a, b) => parseFloat(a.ts) - parseFloat(b.ts))
+          } 
+          if(csvFormat === 'Bybit' || csvFormat === 'Coinbase') {
+            resolve({ 
+              id: crypto.randomBytes(16).toString('base64'),
+              date: new Date().getTime(),
+              format: 'csv',
+              exchange: csvFormat,
+              origin: file.originalname.toLowerCase(),
+              data: transactions 
+            })
           }
-          resolve({ 
-            id: crypto.randomBytes(16).toString('base64'),
-            date: new Date().getTime(),
-            format: 'csv',
-            exchange: 'bybit',
-            origin: file.originalname.toLowerCase(),
-            data: transactions 
-          })
+          reject({ error: 'Unsupported CSV format' })
         })
         .on('error', (err) => {
           reject({ error: 'Error reading CSV file:', err })

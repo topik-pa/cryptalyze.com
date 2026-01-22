@@ -74,11 +74,15 @@ router.post(
     if (!req.file) {
       return res.status(400).send({ error: 'No file uploaded' })
     }
-    const transactions = await getTransactions(req.file)
-    if (transactions.error) {
-      return res.status(500).send({ error: transactions.error })
+    try {
+      const transactions = await getTransactions(req.file)
+      if (transactions.error) {
+        return res.status(500).send({ error: transactions.error })
+      }
+      viewController(req, res, 'transactions', [{ name: 'transactions' }], transactions)
+    } catch (error) {
+      return res.status(500).send({ error })
     }
-    viewController(req, res, 'transactions', [{ name: 'transactions' }], transactions)
   })
 
 // Analysis
