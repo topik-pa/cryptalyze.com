@@ -12,7 +12,6 @@ aside#column .icon-cheveron-up:before {
   transition: all .4s ease-in-out;
   background-color: var(--white);
 }
-
 aside#column.collapsed .icon-cheveron-up:before {
   transform: rotate(90deg);
 }
@@ -31,11 +30,30 @@ aside#column h3 {
   text-transform: uppercase;
 }
 
-aside#column ul {
+/* aside#column ul {
   background-color: var(--black);
   font-size: var(--font-size-small);
 }
 
 aside#column li {
   padding: var(--small-space) var(--small-space) var(--small-space);
+} */
+
+/* aside#column #transactions-upload {
+  margin-top: var(--xx-large-space);
+} */
+
+aside#column #drop {
+  padding: var(--xx-large-space) 0;
+  border: 2px dashed var(--light-gray);
+  border-radius: var(--border-radius-small);
+  text-align: center;
+  color: var(--white);
+  cursor: pointer;
+  transition: .4s;
+  width: 100%;
+}
+
+aside#column #loaded-files {
+  margin-top: var(--main-padding);
 }

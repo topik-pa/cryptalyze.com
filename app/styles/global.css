@@ -34,10 +34,6 @@ body {
   flex-direction: column;
 }
 
-main {
-  flex: 1;
-}
-
 a {
   color: var(--link);
   position: relative;
@@ -96,6 +92,7 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
+  flex: 1;
 }
 
 .layout main {

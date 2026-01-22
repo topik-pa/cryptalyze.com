@@ -1,14 +1,29 @@
-#home #transactions-upload {
-  margin-top: var(--xx-large-space);
+#home main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#home #drop {
-  padding: var(--xx-large-space);
-  border: 2px dashed var(--light-gray);
-  border-radius: var(--border-radius-small);
-  text-align: center;
-  color: var(--darker-gray);
-  cursor: pointer;
-  transition: .4s;
+#home #stats {
   width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid var(--darkest-gray);
+  background-color: var(--dark-gray);
+  color: var(--white);
+  h2 {
+    color: var(--white);
+  }
+  span {
+    font-size: var(--font-size-huge);
+    font-weight: bold;
+  }
+}
+
+#home #stats>div {
+  width: 50%;
+  text-align: center;
+  padding: var(--large-space) 0;
+  box-sizing: border-box;
+  border: 1px solid var(--darkest-gray);
 }

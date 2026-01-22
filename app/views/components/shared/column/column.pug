@@ -1,15 +1,25 @@
 aside(id="column") 
   span(id="colcollapse", class="icon-cheveron-up hide")
-  section 
-    h3= __('column.stats.title')
-    ul#stats
-      li= __('column.stats.total-files')
-        em#total-files 0
-      li= __('column.stats.total-transactions')
-        em#total-transactions 0
 
-    hr
+  section 
+    form(id="transactions-upload" action='/transactions', method='POST', enctype='multipart/form-data')
+      input(id="transactions-input" type='file', name='file', accept='.xlsx, .xls, .csv', required='true' hidden)
+
+      div#drop= __('column.drop.file')
+      p#file-name
+
+      button(id="upload-transactions", type='submit', class="btn primary disabled")= __('home.upload-csv.upload-button')
+      
+  section 
+    //- h3= __('column.stats.title')
+    //- ul#stats
+    //-   li= __('column.stats.total-files')
+    //-     em#total-files 0
+    //-   li= __('column.stats.total-transactions')
+    //-     em#total-transactions 0
+
+    //- hr
 
     h3= __('column.files.title')
-    div#loaded-files
+    div#loaded-files= __('column.files.nofiles')
   

@@ -83,17 +83,14 @@ router.post(
 
 // Analysis
 router.get(
-  `/:lang(${LANG_REGEX})/analysis`, 
-  (req, res) => viewController(req, res, 'analysis', [{ name: 'analysis' }]))
+  `/:lang(${LANG_REGEX})/graph`, 
+  (req, res) => viewController(req, res, 'graph', [{ name: 'graph' }]))
 
 // Contacts
 router.get(`/:lang(${LANG_REGEX})/contacts`, (req, res) => viewController(req, res, 'contacts', [{ name: 'contacts' }]))
 
 // Privacy
 router.get(`/:lang(${LANG_REGEX})/privacy`, (req, res) => viewController(req, res, 'privacy', [{ name: 'privacy' }]))
-
-// Contacts
-router.get(`/:lang(${LANG_REGEX})/contacts`, (req, res) => viewController(req, res, 'contacts', [{ name: 'contacts' }]))
 
 // Home page
 router.get(`/:lang(${LANG_REGEX})`, (req, res) => viewController(req, res, 'home', []))

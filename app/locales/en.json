@@ -4,9 +4,9 @@
   "proj_description": "cryptalize.com description",
   "proj_tagline": "Clearifies your messy crypto transactions history!",
   "views": {
-    "home": "Dashboard",
+    "home": "Home",
     "transactions": "Transactions",
-    "analysis": "Analysis",
+    "graph": "Graph",
     "privacy": "Privacy",
     "contacts": "Contacts"
   },
@@ -14,13 +14,17 @@
     "text": "You are on: "
   },
   "column": {
+    "drop": {
+      "file": "Drag the file here or click to select it"
+    },
     "stats": {
       "title": "Statistics",
       "total-files": "Total files uploaded: ",
       "total-transactions": "Total transactions uploaded:"
     },
     "files": {
-      "title": "Uploaded files"
+      "title": "Uploaded files",
+      "nofiles": "No files uploaded yet."
     }
   },
   "home": {
@@ -32,6 +36,12 @@
       "title": "Upload your transaction history... so we can clarify it for you!",
       "text": "Currently, we can analyse <em>Benance</em> and </em>Bybit</em> file format only.",
       "upload-button": "Upload file"
+    },
+    "stats": {
+      "files": "Files uploaded",
+      "transactions": "Transactions uploaded",
+      "cryptos_count": "Unique cryptos traded",
+      "cryptos_list": "List of cryptos traded"
     }
   },
   "transactions": {
@@ -42,13 +52,13 @@
     },
     "title": "Transactions"
   },
-  "analysis": {
+  "graph": {
     "meta": {
-      "keywords": "analysis",
-      "title": "Analysis",
-      "description": "Analysis page"
+      "keywords": "graph, analysis",
+      "title": "Graph",
+      "description": "Graph page"
     },
-    "title": "Analysis"
+    "title": "Graph"
   },
   "contacts": {
     "meta": {

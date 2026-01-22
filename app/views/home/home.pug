@@ -35,16 +35,21 @@ block append meta
     link(rel="alternate", hreflang=link.lang, href=link.url)
 
 block main
-  section 
-    h2= __('home.upload-csv.title')
-    p!= __('home.upload-csv.text')
-    form(id="transactions-upload" action='/transactions', method='POST', enctype='multipart/form-data')
-      input(id="transactions-input" type='file', name='file', accept='.xlsx, .xls, .csv', required='true' hidden)
-
-      div#drop Drag the file here or click to select it
-      p#file-name
-
-      button(id="upload-transactions", type='submit', class="btn primary disabled")= __('home.upload-csv.upload-button')
+  section#stats
+    //- h2= __('home.upload-csv.title')
+    //- p!= __('home.upload-csv.text')
+    div 
+      h2= __('home.stats.files')
+      span#files 0
+    div 
+      h2= __('home.stats.transactions')
+      span#transactions 0
+    div 
+      h2= __('home.stats.cryptos_count')
+      span#cryptos 0
+    div 
+      h2= __('home.stats.cryptos_list')
+      span#list -
   
 block column 
   include ../components/shared/column/column.pug

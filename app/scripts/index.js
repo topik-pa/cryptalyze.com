@@ -41,7 +41,7 @@ cookieLayer.init()
 const modules = {
   home: () => import('../views/home/home.js'),
   transactions: () => import('../views/transactions/transactions.js'),
-  analysis: () => import('../views/analysis/analysis.js')
+  graph: () => import('../views/graph/graph.js')
 }
 
 // Execute view specific script

@@ -4,9 +4,9 @@
   "proj_description": "cryptalize.com descrizione",
   "proj_tagline": "Chiarisce la storia intricata delle tue crypto transazioni!",
   "views": {
-    "home": "Dashboard",
+    "home": "Home",
     "transactions": "Transazioni",
-    "analysis": "Analisi",
+    "graph": "Grafo",
     "privacy": "Privacy",
     "contacts": "Contatti"
   },
@@ -14,13 +14,17 @@
     "text": "Sei in: "
   },
   "column": {
+    "drop": {
+      "file": "Trascina il file qui o clicca per selezionarlo"
+    },
     "stats": {
       "title": "Statistiche",
       "total-files": "Totale file caricati: ",
       "total-transactions": "Totale transazioni caricate: "
     },
     "files": {
-      "title": "File caricati"
+      "title": "File caricati",
+      "nofiles": "Nessun file caricato ancora."
     }
   },
   "home": {
@@ -32,6 +36,12 @@
       "title": "Trascina qui i file delle tue transazioni... Ti aiuteremo a chiarirli!",
       "text": "Attualmente, possiamo analizzare solo i formati di file <em>Binance</em> (Excel) e <em>Bybit</em> (CSV).",
       "upload-button": "Carica file"
+    },
+    "stats": {
+      "files": "File caricati",
+      "transactions": "Transazioni caricate",
+      "cryptos_count": "Cryptovalute uniche scambiate",
+      "cryptos_list": "Elenco delle cryptovalute scambiate"
     }
   },
   "transactions": {
@@ -42,13 +52,13 @@
     },
     "title": "Transazioni"
   },
-  "analysis": {
+  "graph": {
     "meta": {
-      "keywords": "analysis",
-      "title": "Analisi",
-      "description": "Pagina Analisi"
+      "keywords": "grafo, analisi",
+      "title": "Grafo",
+      "description": "Pagina Grafo"
     },
-    "title": "Analisi"
+    "title": "Grafo"
   },
   "contacts": {
     "meta": {

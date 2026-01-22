@@ -2,7 +2,7 @@
 
 export default  {
   init: async() => {
-    const cssModule = await import('./analysis.css', {
+    const cssModule = await import('./graph.css', {
       with: { type: 'css' }
     })
     try {
