@@ -30,7 +30,7 @@ import multer from 'multer'
 import { fileURLToPath } from 'url'
 import { getAllUsers } from '../controllers/db.controller.js'
 import { viewController } from '../controllers/ui.controller.js'
-import getTransactions from './get-transactions.js'
+import getTransactionsFileData from './get-transactions-file-data.js'
 
 const router = express.Router()
 const LANG_REGEX = 'it|en'
@@ -75,11 +75,11 @@ router.post(
       return res.status(400).send({ error: 'No file uploaded' })
     }
     try {
-      const transactions = await getTransactions(req.file)
-      if (transactions.error) {
-        return res.status(500).send({ error: transactions.error })
+      const transactionsFile = await getTransactionsFileData(req.file)
+      if (transactionsFile.error) {
+        return res.status(500).send({ error: transactionsFile.error })
       }
-      viewController(req, res, 'transactions', [{ name: 'transactions' }], transactions)
+      viewController(req, res, 'transactions', [{ name: 'transactions' }], transactionsFile)
     } catch (error) {
       return res.status(500).send({ error })
     }

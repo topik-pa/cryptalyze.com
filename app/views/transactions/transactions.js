@@ -18,14 +18,15 @@ const buildTransactionsTable = () => {
       <table id="table" class="table table-striped">
         <thead>
           <tr>
+            <th>Order Id</th>
             <th>Date</th>
             <th>Exchange</th>
             <th>Pair</th>
             <th>Type</th>
             <th>Order Price</th>
             <th>Order Amount</th>
+            <th>Avg. Trading Price</th>
             <th>Total</th>
-            <th>Status</th>
           </tr>
         </thead>
         <tbody>
@@ -39,14 +40,15 @@ const buildTransactionsTable = () => {
       })
       tableHTML += `
           <tr>
+            <td>${t.orderNo}</td>
             <td>${formattedDate}</td>
             <td>${batch.exchange}</td>
             <td>${t.pair}</td>
             <td>${t.type}</td>
             <td>${t.orderPrice}</td>
             <td>${t.orderAmount}</td>
+            <td>${t.avgTradingPrice}</td>
             <td>${t.total}</td>
-            <td>${t.status}</td>
           </tr>
         `
     }
