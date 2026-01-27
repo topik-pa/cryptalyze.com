@@ -20,8 +20,14 @@ export default  {
       graphContainer.innerHTML = ''
 
       storedTransactions.forEach(file => {
+        const $section = document.createElement('section')
+        $section.className = 'graph-section'
+        const $title = document.createElement('h3')
+        $title.textContent = `Exchange: ${file.exchange} | Origin: ${file.origin}`
+        $section.appendChild($title)
+        graphContainer.appendChild($section)
         // Instantiate the graph
-        const gitgraph = GitgraphJS.createGitgraph(graphContainer, { orientation: 'vertical-reverse' })
+        const gitgraph = GitgraphJS.createGitgraph($section, { orientation: 'vertical-reverse' })
         const map = new Map()
         const master = gitgraph.branch('Wallet ' + file.exchange)
         master.commit(
@@ -37,7 +43,7 @@ export default  {
             branch.commit(
               {
                 tag: transaction.date || 'placeholder',
-                subject: `${transaction.type} ${transaction.baseAsset} Q.ty ${transaction.filled}`,
+                subject: `${transaction.type} ${transaction.baseAsset} Q.ty ${transaction.orderAmount}`,
                 body: `Price: ${transaction.orderPrice}`
               })
           } else {
@@ -46,7 +52,7 @@ export default  {
             branch.commit(
               {
                 tag: transaction.date || 'placeholder',
-                subject: `${transaction.type} ${transaction.baseAsset} Q.ty ${transaction.filled}`,
+                subject: `${transaction.type} ${transaction.baseAsset} Q.ty ${transaction.orderAmount}`,
                 body: `Price: ${transaction.orderPrice}`
               })
 

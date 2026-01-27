@@ -41,7 +41,7 @@ const buildTransactionsTable = () => {
       tableHTML += `
           <tr>
             <td>${t.orderNo}</td>
-            <td>${formattedDate}</td>
+            <td data-order="${t.ts}">${formattedDate}</td>
             <td>${batch.exchange}</td>
             <td>${t.pair}</td>
             <td>${t.type}</td>
