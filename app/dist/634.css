@@ -1,1 +1,1 @@
-
+#home main{align-items:center;display:flex;justify-content:center}#home #stats{background-color:var(--dark-gray);border:1px solid var(--darkest-gray);color:var(--white);display:flex;flex-wrap:wrap;width:75%;h2{color:var(--white)}span{font-size:var(--font-size-huge);font-weight:700}}#home #stats>div{border:1px solid var(--darkest-gray);box-sizing:border-box;padding:var(--large-space) 0;text-align:center;width:50%}
