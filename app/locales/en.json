@@ -15,7 +15,9 @@
   },
   "column": {
     "drop": {
-      "file": "Drag the file here or click to select it"
+      "file": "Drag the file here or click to select it",
+      "supported_files": "Transaction files can be uploaded in Excel (.xlsx, .xls) or CSV (.csv) format. <br>Currently <em>supported formats</em> are those related to <em>Coinbase, ByBit, and Binance</em> exchanges.",
+      "howto": "Drag and drop a file in the area below or click to select it from your device."
     },
     "stats": {
       "title": "Statistics",

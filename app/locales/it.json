@@ -15,7 +15,9 @@
   },
   "column": {
     "drop": {
-      "file": "Trascina il file qui o clicca per selezionarlo"
+      "file": "Trascina il file qui o clicca per selezionarlo",
+      "supported_files": "I file di transazioni possono essere caricati in formato Excel (.xlsx, .xls) o CSV (.csv). <br>I <em>formati supportati</em> in questo momento sono quelli relativi agli exchange <em>Coinbase, ByBit e Binance</em>.",
+      "howto": "Trascina e rilascia un file nell'area sottostante oppure fai clic per selezionarlo dal tuo dispositivo."
     },
     "stats": {
       "title": "Statistiche",
